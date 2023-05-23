@@ -1,0 +1,88 @@
+.how-card {
+  text-align: center;
+  display: flex;
+  position: relative;
+  flex: 1;
+  gap: 4.2rem;
+  flex-direction: column;
+
+  background-color: $color-white;
+  padding: 3.2rem 3.2rem 4.5rem;
+  transition: all 0.7s;
+
+  @include shadow(0, 10px, 20px, 0.05);
+
+  &:first-child {
+    border-top-left-radius: 100px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 100px;
+  }
+
+  &__icon {
+    position: absolute;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__icon-box {
+    position: relative;
+    height: 10rem;
+    width: 100%;
+
+    &::before {
+      display: block;
+      content: "";
+      z-index: 1;
+      background-color: $color-blue-bg-dark;
+      position: absolute;
+      border-radius: 100%;
+      height: 10rem;
+      width: 10rem;
+
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__title {
+    font-weight: $font-weight-medium;
+    line-height: 1.25;
+    position: relative;
+    font-size: $fs-medium;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: $fs-default;
+    line-height: 1.2;
+    // margin-top: auto;
+  }
+
+  &:hover {
+    @include shadow(0, calc(10px + 4rem), 40px, 0.07);
+    transform: translateY(-4rem);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $color-brown;
+    height: 1px;
+    width: 10rem;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    // bottom: 0;
+    // margin: $margin-tb-medium auto 0;
+  }
+}

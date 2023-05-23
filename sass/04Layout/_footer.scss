@@ -1,0 +1,161 @@
+.foot {
+  background-color: $color-blue;
+
+  &__grid {
+    position: relative;
+    display: grid;
+    padding: 3.2rem 0;
+    grid-template-columns: repeat(5, 2fr) 1fr;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+
+    &--first {
+      justify-content: space-between;
+    }
+
+    &--links {
+      justify-content: space-between;
+
+      a:first-child {
+        margin-top: 1.5rem;
+      }
+    }
+
+    &--last {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    width: 40%;
+    margin-bottom: $fs-default;
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: $color-text-purple;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: $color-brown;
+  }
+
+  &__text {
+    color: $color-text-purple;
+  }
+
+  &__btn:link,
+  &__btn:visited {
+    display: block;
+    position: absolute;
+    width: 7.2rem;
+    height: 7.2rem;
+    background-color: $color-white;
+    text-decoration: none;
+    color: $color-text-purple;
+    top: 0;
+    right: 0;
+
+    transform: translateY(-50%);
+
+    &::before {
+      content: "\1f871";
+      position: absolute;
+      color: $color-brown;
+      font-size: 3.2rem;
+      font-weight: $font-weight-bold;
+
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      z-index: -1;
+      transition: all 0.6s ease;
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      --border-color: #{$color-brown};
+      --border-weight: 2px;
+      --dash-size: 5px;
+      --gap-size: 5px;
+      background: linear-gradient(
+            90deg,
+            var(--border-color) 100%,
+            transparent 100%
+          )
+          top left no-repeat,
+        linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          top center repeat-x,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top
+          right no-repeat,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top
+          left no-repeat,
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          center left repeat-y,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom
+          left no-repeat,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%)
+          bottom left no-repeat,
+        linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          bottom center repeat-x,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%)
+          bottom right no-repeat,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top
+          right no-repeat,
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          center right repeat-y,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom
+          right no-repeat;
+      background-size: var(--dash-size) var(--border-weight),
+        calc(var(--dash-size) + var(--gap-size)) var(--border-weight),
+        var(--dash-size) var(--border-weight),
+        var(--border-weight) var(--dash-size),
+        var(--border-weight) calc(var(--dash-size) + var(--gap-size)),
+        var(--border-weight) var(--dash-size);
+    }
+  }
+
+  &__btn:hover,
+  &__btn:active {
+    color: $color-brown;
+
+    &::before {
+      animation: footerButton 1.5s ease-in-out infinite;
+    }
+  }
+}

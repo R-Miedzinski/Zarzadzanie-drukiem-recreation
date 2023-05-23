@@ -1,0 +1,668 @@
+@media (max-width: 1600px) {
+  .audit__form::before {
+    content: none;
+  }
+}
+
+@media (max-width: 1400px) {
+  html {
+    font-size: 50%;
+  }
+
+  .u-container {
+    max-width: 1200px;
+  }
+
+  .how-card {
+    &__text {
+      margin-top: auto;
+    }
+
+    &::after {
+      top: 52%;
+    }
+  }
+
+  .meter {
+    width: 39.4rem;
+    height: 21.25rem;
+  }
+
+  .meeting-form {
+    &--live {
+      button {
+        font-size: 1.4rem;
+        width: 40%;
+        padding: 1.2rem 2rem;
+      }
+    }
+    &--online {
+      &__btn {
+        &:link::after,
+        &:visited::after {
+          width: 7rem;
+          height: 7rem;
+        }
+
+        &:hover::after,
+        &:active::after {
+          width: 12rem;
+          height: 12rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .u-container {
+    max-width: 1000px;
+  }
+
+  .how {
+    &__box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .how-card {
+    border-radius: 3rem !important;
+
+    &::after {
+      top: 60%;
+    }
+  }
+}
+
+@media (max-width: 1070px) {
+  html {
+    font-size: 42.5%;
+  }
+
+  .u-container {
+    max-width: 800px;
+  }
+
+  .intro {
+    &__text-box {
+      .btn {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .whatis {
+    &__content {
+      flex-direction: column;
+      gap: $fs-default;
+    }
+
+    &__img-box {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__img {
+      width: 50%;
+    }
+
+    &__p {
+      font-size: $fs-medium;
+      &--strong {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .meter {
+    width: 46.35rem;
+    height: 25rem;
+  }
+
+  .audit {
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__form {
+      &--label {
+        font-size: 1.8rem;
+      }
+      //   &--check {
+      //     min-width: 3rem;
+      //     width: 3rem;
+      //     height: 3rem;
+      //   }
+    }
+
+    &__meter-decoration {
+      display: none;
+    }
+
+    &__meter-box {
+      .btn {
+        align-self: center;
+        width: 20%;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .how-card {
+    // gap: 5rem;
+    // justify-content: space-between;
+
+    &::after {
+      top: 58%;
+    }
+
+    &__text {
+      font-size: 1.6rem;
+    }
+  }
+
+  .meeting {
+    overflow: hidden;
+    padding-top: 10rem;
+    &__img {
+      bottom: 0;
+      right: 0;
+
+      transform: scale(0.4) translate(325%, 110%) rotate(15deg);
+    }
+  }
+
+  .NeedPrint {
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__list {
+      &--title {
+        font-size: 2rem;
+      }
+
+      &--item {
+        font-size: 2rem;
+      }
+    }
+
+    &__img {
+      width: 90%;
+    }
+  }
+
+  .who {
+    &__paragraph {
+      &--1 {
+        font-size: 2rem;
+        margin-right: 0;
+      }
+
+      &--2 {
+        font-size: 2rem;
+        margin-right: 0;
+      }
+    }
+
+    &__contentbox {
+      padding: 5rem 8rem 0;
+    }
+
+    &__bird {
+      transition: all;
+      height: 50%;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      transform: translate(10%, 120%);
+
+      &--body {
+        opacity: 0.15;
+      }
+
+      &--shadow {
+        display: none;
+      }
+    }
+
+    .btn {
+      font-size: 2rem;
+    }
+  }
+
+  .meeting-form {
+    &--live {
+      button {
+        font-size: 1.5rem;
+        width: 50%;
+        padding: 1.5rem 2.4rem;
+      }
+    }
+    &--online {
+      &__btn {
+        &:link::after,
+        &:visited::after {
+          width: 8rem;
+          height: 8rem;
+        }
+
+        &:hover::after,
+        &:active::after {
+          width: 14rem;
+          height: 14rem;
+        }
+      }
+    }
+  }
+
+  .foot {
+    font-size: 1.8rem;
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__col {
+      &--first,
+      &--last {
+        grid-column: 1/-1;
+        justify-self: center;
+      }
+    }
+
+    &__logo {
+      width: 75%;
+      margin: 0 auto $fs-default;
+    }
+  }
+}
+
+@media (max-width: 830px) {
+  html {
+    font-size: 30%;
+  }
+
+  .u-container {
+    max-width: 600px;
+  }
+
+  .heading-secondary {
+    font-size: 6rem;
+
+    &--before {
+      &::before {
+        top: -8rem;
+      }
+    }
+  }
+
+  .head {
+    &-d {
+      &__nav {
+        height: 100%;
+      }
+
+      &__logobox {
+        padding: 3rem 0;
+        & > a {
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      &__logo {
+        width: 75%;
+      }
+
+      &__link {
+        display: none;
+      }
+    }
+  }
+
+  .intro {
+    overflow: hidden;
+    padding: 16rem 0;
+    &__wrapper {
+      margin: 0;
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+
+    &__text-box {
+      .btn {
+        font-size: 2.5rem;
+        padding: 2rem 4rem;
+      }
+    }
+
+    &__p {
+      font-size: 3rem;
+    }
+  }
+
+  .whatis {
+    &__img {
+      width: 80%;
+    }
+
+    &__p {
+      font-size: 3rem;
+      &--strong {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .audit {
+    &__wrapper {
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__text {
+      font-size: 3.8rem;
+    }
+
+    &__form {
+      &--label {
+        font-size: 2.8rem;
+      }
+    }
+
+    &__meter-box {
+      width: 80%;
+
+      .btn {
+        min-width: 40%;
+        font-size: 2.8rem;
+      }
+    }
+  }
+
+  .meter {
+    width: 65.66rem;
+    height: 35.4rem;
+
+    &--empty {
+      img {
+        height: 50%;
+      }
+    }
+
+    &--full {
+      img {
+        height: 50%;
+      }
+    }
+  }
+
+  .how {
+    &__box {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .how-card {
+    padding: 6rem 10rem 9rem;
+    gap: 5rem;
+
+    &__title {
+      font-size: 4rem;
+    }
+
+    &__text {
+      font-size: 2.4rem;
+    }
+
+    &::after {
+      top: 55%;
+      width: 20rem;
+    }
+  }
+
+  .meeting {
+    margin-bottom: 8rem;
+
+    &__wrapper {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 5rem 14rem;
+      & > * {
+        flex: 1 0 100%;
+      }
+    }
+
+    &__textbox {
+      padding: 0;
+      text-align: left;
+      width: 100%;
+    }
+
+    &__heading {
+      font-size: 5rem;
+    }
+
+    &__text {
+      font-size: 3rem;
+    }
+
+    &__img {
+      bottom: 0;
+      right: 0;
+
+      transform: scale(0.35) translate(220%, -50%) rotate(10deg);
+    }
+
+    &__btn-wrapper {
+      width: 100%;
+      justify-content: left;
+
+      .btn {
+        width: 100%;
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .why {
+    &__wrapper {
+      &::after {
+        content: none;
+      }
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+
+      &::after,
+      &::before {
+        content: none;
+      }
+    }
+
+    &__li {
+      &--title {
+        font-size: 4.2rem;
+      }
+
+      &--item {
+        font-size: 2.8rem;
+      }
+    }
+  }
+
+  .NeedPrint {
+    &__p {
+      font-size: 3.4rem;
+    }
+
+    &__list {
+      &--title,
+      &--item {
+        font-size: 2.8rem;
+      }
+    }
+  }
+
+  .who {
+    padding: 9rem 0 7rem;
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    &__paragraph {
+      font-size: 3rem;
+    }
+
+    &__contentbox {
+      .btn {
+        font-size: 3rem;
+        padding: 2rem 4rem;
+      }
+    }
+  }
+
+  .end {
+    padding: 14rem 0;
+
+    &__wrapper {
+      &::after {
+        min-width: 1200px;
+        min-height: 1200px;
+      }
+    }
+
+    &__paragraph {
+      padding-bottom: 2rem;
+      font-size: 3.8rem;
+    }
+
+    &__form-box {
+      flex-direction: column;
+
+      &::after,
+      &::before {
+        content: none;
+      }
+    }
+    &__floating-word {
+      display: none;
+    }
+  }
+
+  .meeting-form {
+    &__head {
+      font-size: 3.8rem;
+    }
+
+    &--live {
+      gap: 3.5rem;
+
+      &__input {
+        padding: 1.5rem 4rem;
+      }
+
+      span {
+        width: 125%;
+
+        &:last-of-type {
+          margin-bottom: $margin-tb-medium;
+        }
+      }
+
+      span:has(> &__input:required:placeholder-shown)::after,
+      span:has(> &__input[type="tel"]:not(:placeholder-shown):invalid)::after,
+      span:has(> &__input[type="mail"]:not(:placeholder-shown):invalid)::after {
+        font-size: 2rem;
+        left: 3rem;
+        bottom: -3rem;
+      }
+
+      button {
+        font-size: 2.2rem;
+        width: 60%;
+        padding: 2rem 3rem;
+      }
+    }
+
+    &--online {
+      &__text {
+        font-size: 3.2rem;
+      }
+
+      &__btn {
+        &:link::after,
+        &:visited::after {
+          width: 12rem;
+          height: 12rem;
+        }
+
+        &:hover::after,
+        &:active::after {
+          width: 20rem;
+          height: 20rem;
+        }
+      }
+    }
+  }
+
+  .foot {
+    &__grid {
+      row-gap: 4rem;
+    }
+
+    &__link,
+    &__text {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (max-width: 610px) {
+  .u-container {
+    margin: 0 4rem;
+  }
+
+  .how-card {
+    &::after {
+      top: 50%;
+    }
+  }
+
+  .foot {
+    &__grid {
+      grid-template-columns: 1fr;
+      row-gap: 0;
+
+      & > * {
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        justify-content: space-around;
+      }
+    }
+
+    &__col {
+      &--first {
+        margin-bottom: 4rem;
+      }
+
+      &--last {
+        margin-top: 4rem;
+      }
+
+      &--links {
+        justify-content: space-between;
+
+        a:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

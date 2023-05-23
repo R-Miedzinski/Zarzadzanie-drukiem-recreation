@@ -1,0 +1,139 @@
+.why {
+  &__wrapper {
+    position: relative;
+
+    &::after {
+      z-index: 5;
+      content: "";
+      display: block;
+      --border-color: #{$color-brown};
+      --border-weight: 1px;
+      --dash-size: 10px;
+      --gap-size: 10px;
+      position: absolute;
+      height: 100%;
+      width: calc(var(--border-weight) + 1px);
+
+      left: 50%;
+      top: 5%;
+
+      background: linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          bottom center repeat-x,
+        linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          top center repeat-x,
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          center right repeat-y;
+      background-size: var(--dash-size) var(--border-weight),
+        var(--dash-size) var(--border-weight),
+        calc(var(--border-weight) + 1px) var(--dash-size);
+    }
+  }
+
+  &__grid {
+    position: relative;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    counter-reset: li-counter;
+
+    &::after {
+      position: absolute;
+      content: url("..//svg/scissors-half.svg");
+      top: 0;
+      left: 50%;
+
+      animation: scissorsRight ease-in-out 1.5s alternate infinite;
+    }
+    &::before {
+      position: absolute;
+      content: url("..//svg/scissors-half.svg");
+      top: 0;
+      left: 50%;
+
+      animation: scissorsLeft ease-in-out 1.5s alternate infinite;
+    }
+  }
+
+  &__li {
+    padding: 4rem 8rem;
+    position: relative;
+
+    &--title {
+      font-size: $fs-medium;
+      margin-bottom: $fs-medium;
+
+      position: relative;
+      counter-increment: li-counter;
+
+      &::before {
+        content: "0" counter(li-counter);
+        position: absolute;
+        color: rgba($color-brown, 0.2);
+        font-size: $fs-big;
+        line-height: 1;
+
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -30%);
+      }
+    }
+
+    &--item {
+      line-height: 1.5;
+      font-size: $fs-default;
+      font-weight: 300;
+    }
+
+    &::after {
+      z-index: 5;
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      --border-color: #{$color-brown};
+      --border-weight: 1px;
+      --dash-size: 10px;
+      --gap-size: 10px;
+      background: linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          bottom center repeat-x,
+        linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          top center repeat-x;
+      background-size: var(--dash-size) var(--border-weight);
+    }
+
+    // &:nth-child(odd)::after {
+    // }
+  }
+}

@@ -1,0 +1,78 @@
+.intro {
+  padding: 10rem 0;
+  background-color: $color-blue-bg;
+
+  &__wrapper {
+    margin: 0 10rem;
+    background-image: url("../img/fiber1.jpg");
+    background-size: cover;
+
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: url("../svg/cmyk.svg");
+      top: 50%;
+      left: 0;
+
+      transform: translate(-1 * $margin-lr-big, -50%);
+    }
+
+    &::after {
+      position: absolute;
+      content: url("../svg/cmyk2.svg");
+      top: 50%;
+      right: 0;
+
+      transform: translate($margin-lr-big, -50%);
+    }
+  }
+
+  &__text-box {
+    padding: 12rem 0;
+  }
+
+  &__p {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__pointer {
+    position: absolute;
+
+    &--tl {
+      top: 0;
+      left: 0;
+
+      transform: translate(-50%, -50%);
+    }
+
+    &--tr {
+      top: 0;
+      right: 0;
+
+      transform: rotate(90deg) translate(-50%, -50%);
+    }
+
+    &--bl {
+      bottom: 0;
+      left: 0;
+      transform: rotate(-90deg) translate(-50%, -50%);
+    }
+
+    &--br {
+      bottom: 0;
+      right: 0;
+
+      transform: rotate(-180deg) translate(-50%, -50%);
+    }
+  }
+
+  &__black-box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 300%);
+  }
+}

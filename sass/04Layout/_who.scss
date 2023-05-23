@@ -1,0 +1,198 @@
+.who {
+  // overflow-x: hidden;
+  // overflow-y: visible;
+  &__wrapper {
+  }
+
+  &__contentbox {
+    position: relative;
+
+    border: $fs-default solid $color-brown-bg;
+    padding: 3rem 5rem 0;
+
+    &::after {
+      z-index: -1;
+      transition: all 0.6s ease;
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      --border-color: #{$color-brown};
+      --border-weight: 2px;
+      --dash-size: 5px;
+      --gap-size: 5px;
+      background: linear-gradient(
+            90deg,
+            var(--border-color) 100%,
+            transparent 100%
+          )
+          top left no-repeat,
+        linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          top center repeat-x,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top
+          right no-repeat,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top
+          left no-repeat,
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          center left repeat-y,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom
+          left no-repeat,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%)
+          bottom left no-repeat,
+        linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          bottom center repeat-x,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%)
+          bottom right no-repeat,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top
+          right no-repeat,
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          center right repeat-y,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom
+          right no-repeat;
+      background-size: var(--dash-size) var(--border-weight),
+        calc(var(--dash-size) + var(--gap-size)) var(--border-weight),
+        var(--dash-size) var(--border-weight),
+        var(--border-weight) var(--dash-size),
+        var(--border-weight) calc(var(--dash-size) + var(--gap-size)),
+        var(--border-weight) var(--dash-size);
+      background-color: $color-white;
+    }
+
+    &::before {
+      z-index: -2;
+      transition: all 0.6s ease;
+      content: "";
+      position: absolute;
+      --gap: #{- 0.2rem - $fs-default};
+      top: var(--gap);
+      left: var(--gap);
+      right: var(--gap);
+      bottom: var(--gap);
+      --border-color: #{$color-brown-bg};
+      --border-weight: 2px;
+      --dash-size: 5px;
+      --gap-size: 5px;
+      background: linear-gradient(
+            90deg,
+            var(--border-color) 100%,
+            transparent 100%
+          )
+          top left no-repeat,
+        linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          top center repeat-x,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top
+          right no-repeat,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top
+          left no-repeat,
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          center left repeat-y,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom
+          left no-repeat,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%)
+          bottom left no-repeat,
+        linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          bottom center repeat-x,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%)
+          bottom right no-repeat,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top
+          right no-repeat,
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          center right repeat-y,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom
+          right no-repeat;
+      background-size: var(--dash-size) var(--border-weight),
+        calc(var(--dash-size) + var(--gap-size)) var(--border-weight),
+        var(--dash-size) var(--border-weight),
+        var(--border-weight) var(--dash-size),
+        var(--border-weight) calc(var(--dash-size) + var(--gap-size)),
+        var(--border-weight) var(--dash-size);
+    }
+  }
+
+  &__paragraph {
+    &--1 {
+      font-size: $fs-default;
+      margin-right: 40%;
+    }
+
+    &--2 {
+      font-size: 0.3rem + $fs-default;
+      margin-right: 50%;
+    }
+  }
+
+  .btn {
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    transform: translate(20%, 50%);
+  }
+
+  &__bird {
+    transition: all;
+    height: 125%;
+
+    position: absolute;
+    top: -5.5rem;
+    right: -5.5rem;
+
+    &--body {
+    }
+
+    &--shadow {
+      animation: BirdsShadow ease-in-out 3s alternate infinite;
+    }
+  }
+}

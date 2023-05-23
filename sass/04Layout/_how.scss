@@ -1,0 +1,50 @@
+.how {
+  z-index: 1;
+  background: linear-gradient(to bottom, $color-blue-bg, $color-white);
+  padding: 12rem 0;
+  position: relative;
+
+  &::after {
+    z-index: -1;
+    transition: all 0.6s ease;
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    --border-color: #{$color-brown};
+    --border-weight: 2px;
+    --dash-size: 5px;
+    --gap-size: 5px;
+    background: linear-gradient(
+          90deg,
+          var(--border-color) 100%,
+          transparent 100%
+        )
+        top left no-repeat,
+      linear-gradient(
+          90deg,
+          transparent calc(var(--gap-size) / 2),
+          var(--border-color) calc(var(--gap-size) / 2),
+          var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+          transparent calc(var(--gap-size) / 2 + var(--dash-size))
+        )
+        top center repeat-x,
+      linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top
+        right no-repeat,
+      linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left
+        no-repeat;
+    background-size: var(--dash-size) var(--border-weight),
+      calc(var(--dash-size) + var(--gap-size)) var(--border-weight),
+      var(--dash-size) var(--border-weight),
+      var(--border-weight) var(--dash-size),
+      var(--border-weight) calc(var(--dash-size) + var(--gap-size)),
+      var(--border-weight) var(--dash-size);
+  }
+
+  &__box {
+    display: flex;
+    gap: $margin-lr-medium;
+  }
+}

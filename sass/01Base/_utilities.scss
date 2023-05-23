@@ -1,0 +1,45 @@
+.u-center-text {
+  text-align: center !important;
+}
+
+// utility margins
+.u-margin-bottom-huge {
+  margin-bottom: $margin-tb-huge !important;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: $margin-tb-big !important;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: $margin-tb-medium !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: $margin-tb-small !important;
+}
+
+.u-margin-top-huge {
+  margin-top: $margin-tb-huge !important;
+}
+
+.u-margin-top-big {
+  margin-top: $margin-tb-big !important;
+}
+
+.u-margin-top-medium {
+  margin-top: $margin-tb-medium !important;
+}
+
+.u-margin-top-small {
+  margin-top: $margin-tb-small !important;
+}
+
+// utility centering containers
+
+.u-container {
+  /* 1140px */
+  max-width: 1310px;
+  // padding: 0 $margin-lr-big-page;
+  margin: 0 auto;
+}

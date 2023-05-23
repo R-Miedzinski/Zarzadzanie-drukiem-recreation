@@ -1,0 +1,57 @@
+.NeedPrint {
+  background-color: $color-blue-bg;
+
+  &__wrapper {
+    padding: $margin-tb-big 0;
+    display: flex;
+    gap: $fs-big;
+  }
+
+  &__textbox {
+    display: flex;
+    flex-direction: column;
+    gap: $fs-medium;
+  }
+
+  &__p {
+    line-height: 1.3;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    // list-style-position: inside;
+
+    &--li {
+      background: url("../svg/tick.svg") center left 1.5rem no-repeat;
+      background-size: 2.2rem;
+
+      background-color: $color-white;
+      border-radius: 1rem;
+      padding: 0.5rem 0 0.5rem 5rem;
+      // width: 90%;
+      align-items: center;
+    }
+
+    &--title {
+    }
+
+    &--item {
+      display: block;
+      color: $color-text-light;
+      font-weight: $font-weight-light;
+    }
+  }
+
+  &__imgbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}

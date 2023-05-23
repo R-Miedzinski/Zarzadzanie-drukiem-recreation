@@ -1,0 +1,143 @@
+.meeting {
+  color: $color-white;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    & > * {
+      flex: 1 0 50%;
+    }
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+
+    // max-width: 90%;
+
+    padding: 3rem 8rem;
+    margin: 0 auto;
+    background-color: $color-blue;
+    background-image: url("../img/porozmawiajmy-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+
+    &::after {
+      z-index: 5;
+      transition: all 0.6s ease;
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -2px;
+      right: -2px;
+      bottom: -3px;
+      --border-color: #{$color-brown};
+      --border-weight: 2px;
+      --dash-size: 5px;
+      --gap-size: 5px;
+      background: linear-gradient(
+            90deg,
+            var(--border-color) 100%,
+            transparent 100%
+          )
+          top left no-repeat,
+        linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          top center repeat-x,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top
+          right no-repeat,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top
+          left no-repeat,
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          center left repeat-y,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom
+          left no-repeat,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%)
+          bottom left no-repeat,
+        linear-gradient(
+            90deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          bottom center repeat-x,
+        linear-gradient(90deg, var(--border-color) 100%, transparent 100%)
+          bottom right no-repeat,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top
+          right no-repeat,
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2),
+            var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)),
+            transparent calc(var(--gap-size) / 2 + var(--dash-size))
+          )
+          center right repeat-y,
+        linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom
+          right no-repeat;
+      background-size: var(--dash-size) var(--border-weight),
+        calc(var(--dash-size) + var(--gap-size)) var(--border-weight),
+        var(--dash-size) var(--border-weight),
+        var(--border-weight) var(--dash-size),
+        var(--border-weight) calc(var(--dash-size) + var(--gap-size)),
+        var(--border-weight) var(--dash-size);
+    }
+  }
+
+  &__textbox {
+    padding-right: 5rem;
+  }
+
+  &__heading {
+    font-size: $fs-medium + $fs-default;
+    font-weight: $font-weight-bold;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 25%;
+      background-color: $color-brown;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__text {
+    font-size: $fs-medium;
+  }
+
+  &__img {
+    z-index: 10;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    // transform: translateX(50%);
+  }
+
+  &__btn-wrapper {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    // padding-right: 4rem;
+
+    .btn:link,
+    .btn:visited {
+      font-size: $fs-medium;
+      padding: 2.5rem 3rem;
+    }
+  }
+}

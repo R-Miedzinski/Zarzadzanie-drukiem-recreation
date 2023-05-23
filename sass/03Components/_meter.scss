@@ -1,0 +1,46 @@
+.meter {
+  align-self: center;
+  position: relative;
+
+  width: 31.5rem;
+  height: 17rem;
+
+  & > * {
+    position: absolute;
+
+    transition: all 0.3s;
+  }
+
+  &--empty {
+  }
+
+  &--full {
+  }
+
+  &--mask {
+    height: 200%;
+    // z-index: 10;
+    -webkit-mask-image: conic-gradient(
+      from -90deg,
+      white -90deg,
+      white calc(var(--counter) * 180deg / 8),
+      transparent calc(var(--counter) * 180deg / 8),
+      transparent 90deg
+    );
+    mask-image: conic-gradient(
+      from -90deg,
+      white -90deg,
+      white calc(var(--counter) * 180deg / 8),
+      transparent calc(var(--counter) * 180deg / 8),
+      transparent 90deg
+    );
+  }
+
+  &__arrow {
+    bottom: 0;
+    left: 50%;
+
+    transform-origin: right;
+    transform: translate(-100%, 50%) rotate(calc(180deg / 8 * var(--counter)));
+  }
+}

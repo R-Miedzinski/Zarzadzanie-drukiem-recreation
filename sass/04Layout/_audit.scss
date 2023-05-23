@@ -1,0 +1,147 @@
+.audit {
+  &__wrapper {
+    display: flex;
+    gap: $margin-lr-big;
+  }
+
+  &__textbox {
+    flex: 0 0 60%;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &::before {
+      content: url("../../svg/arrow-decor.svg");
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      animation: auditArrow 3s ease-in-out alternate-reverse infinite;
+    }
+
+    &-item {
+      display: flex;
+      padding: 1.5rem 0;
+      gap: 2.2rem;
+      // padding-left: 2rem;
+      cursor: pointer;
+      line-height: 1;
+
+      &:nth-child(odd) {
+        background-color: $color-blue-bg;
+      }
+
+      &:nth-child(even) {
+        background-color: $color-blue-bg-light;
+      }
+    }
+
+    &--input {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &--check {
+      // justify-content: center;
+      // align-items: center;
+      display: block;
+      min-width: 22px;
+      width: 22px;
+      height: 22px;
+      position: relative;
+      z-index: 4;
+
+      background-color: $color-white;
+      border: 1px solid $color-blue-bg-dark;
+      border-radius: 3px;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        z-index: 5;
+
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.789' height='8.791' viewBox='0 0 11.789 8.791'%3E%3Cpath d='M4,13.2.173,9.364a.589.589,0,0,1,0-.834L1.006,7.7a.589.589,0,0,1,.834,0l2.581,2.581L9.949,4.75a.589.589,0,0,1,.834,0l.834.834a.589.589,0,0,1,0,.834L4.838,13.2A.589.589,0,0,1,4,13.2Z' transform='translate(0 -4.577)' fill='%23fff'/%3E%3C/svg%3E")
+          no-repeat;
+        background-position: center;
+
+        // background-color: $color-blue;
+        border-radius: 3px;
+
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        opacity: 0;
+        transition: all 0.3s;
+      }
+
+      &::before {
+        position: absolute;
+        display: block;
+        content: "";
+        z-index: 6;
+
+        color: $color-white;
+        border-radius: 3px;
+
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        opacity: 1;
+        transition: all 0.3s;
+      }
+    }
+
+    &--label {
+      padding: 0 2rem;
+      border-left: 1px solid $color-blue-bg-dark;
+    }
+
+    &--input:checked + &--check::after {
+      opacity: 1;
+      background-color: $color-blue;
+    }
+
+    &-item:hover &--check::after {
+      opacity: 1;
+      background-color: lighten($color-blue, 50%);
+    }
+
+    &-item:active &--check::after {
+      opacity: 1;
+      background-color: $color-white;
+    }
+  }
+
+  &__meter-box {
+    // flex: 0 0 30%;
+    margin-top: auto;
+    flex-direction: column;
+    display: flex;
+    gap: $margin-tb-huge;
+    position: relative;
+
+    .btn {
+      margin: 0 4rem;
+    }
+  }
+
+  &__meter-decoration {
+    // align-self: center;
+    text-align: right;
+    font-size: 56rem;
+    font-weight: 900;
+    color: $color-blue-bg;
+    opacity: 0.7;
+
+    margin-top: -30rem;
+    margin-bottom: -45rem;
+
+    animation: auditDecoration ease-in-out 3s infinite;
+  }
+}

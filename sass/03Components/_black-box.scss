@@ -1,0 +1,24 @@
+.black-box {
+  display: flex;
+  gap: 2px;
+
+  &__box {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+
+    transition: all 0.3s ease;
+
+    @for $i from 0 to 10 {
+      $current-color: lighten($color-black, $i * 9%);
+      $current-color-hover: hsl(($i + 1) * 360 / 10, 50, 50);
+      &:nth-child(#{$i + 1}) {
+        background-color: $current-color;
+      }
+
+      &:nth-child(#{$i + 1}):hover {
+        background-color: $current-color-hover;
+      }
+    }
+  }
+}
